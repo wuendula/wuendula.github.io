@@ -2,7 +2,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-image: url('background.jpg'); /* 添加背景图片 */
+    background-size: cover; /* 使背景图片覆盖整个页面 */
+    background-position: center; /* 使背景图片居中 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +14,7 @@ body {
     width: 90%;
     max-width: 800px;
     padding: 20px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9); /* 使容器背景半透明 */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     position: relative;
@@ -43,11 +45,12 @@ h1 {
     max-width: 100px;
     height: auto;
     transform: rotate(-10deg); /* 倾斜方向改为负 */
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* 添加更深的阴影效果 */
 }
 .side-image:hover {
     transform: rotate(-10deg) scale(1.2); /* 放大并保持倾斜 */
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.7); /* 鼠标悬停时阴影变大且颜色更深 */
 }
 @media (max-width: 600px) {
     .container {
