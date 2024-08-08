@@ -7,6 +7,7 @@ let food = {x: 15, y: 15};
 let dx = 0;
 let dy = 0;
 let score = 0;
+let gameOverFlag = false;
 
 function init() {
     canvas.width = gridSize * tileCount;
@@ -16,6 +17,7 @@ function init() {
 }
 
 function gameLoop() {
+    if (gameOverFlag) return;
     clearCanvas();
     moveSnake();
     drawSnake();
@@ -105,8 +107,20 @@ function updateScore() {
 }
 
 function gameOver() {
-    alert('游戏结束！得分: ' + score);
-    document.location.reload();
+    gameOverFlag = true;
+    document.getElementById('restartButton').style.display = 'block';
 }
+
+function restartGame() {
+    snake = [{x: 10, y: 10}];
+    food = {x: 15, y: 15};
+    dx = 0;
+    dy = 0;
+    score = 0;
+    gameOverFlag = false;
+    document.getElementById('restartButton').style.display = 'none';
+}
+
+document.getElementById('restartButton').addEventListener('click', restartGame);
 
 init();
