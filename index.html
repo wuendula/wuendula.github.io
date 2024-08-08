@@ -2,71 +2,7 @@
 <html>
 <head>
 	<title>我的个人博客</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-			background-color: #f4f4f4;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 100vh;
-		}
-		.container {
-			width: 90%;
-			max-width: 800px;
-			padding: 20px;
-			background-color: #fff;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-			text-align: center;
-			position: relative;
-		}
-		h1 {
-			color: #333;
-		}
-		.post img {
-			max-width: 100%;
-			height: auto;
-			opacity: 0;
-			animation: fadeIn 2s ease-in-out forwards;
-		}
-		@keyframes fadeIn {
-			from {
-				opacity: 0;
-				transform: translateY(20px);
-			}
-			to {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		}
-		.side-image {
-			position: absolute;
-			top: 20px;
-			left: 20px; /* 将图片定位在容器的左上角 */
-			max-width: 100px;
-			height: auto;
-			transform: rotate(-10deg); /* 倾斜方向改为负 */
-			transition: transform 0.3s ease-in-out;
-			box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* 添加更深的阴影效果 */
-		}
-		.side-image:hover {
-			transform: rotate(-10deg) scale(1.2); /* 放大并保持倾斜 */
-		}
-		@media (max-width: 600px) {
-			.container {
-				width: 95%;
-				padding: 10px;
-			}
-			h1 {
-				font-size: 1.5em;
-			}
-			.side-image {
-				max-width: 80px;
-			}
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<div class="container">
