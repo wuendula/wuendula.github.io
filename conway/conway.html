@@ -15,13 +15,12 @@
             <li>任何活细胞周围有多于3个活细胞时，它将死亡（拥挤）。</li>
             <li>任何死细胞周围有3个活细胞时，它将复活。</li>
         </ol>
-        <p>玩法：点击细胞来切换其状态，点击开始按钮来启动或暂停游戏，点击滑翔机按钮来生成一个滑翔机图案，点击宇宙飞船按钮来生成一个宇宙飞船图案，点击高帕斯滑翔机枪按钮来生成一个高帕斯滑翔机枪图案。</p>
+        <p>玩法：点击细胞来切换其状态，点击开始按钮来启动或暂停游戏，点击滑翔机按钮来生成一个滑翔机图案，点击宇宙飞船按钮来生成一个宇宙飞船图案。</p>
     </div>
     <canvas id="gameCanvas" width="800" height="600"></canvas>
     <button id="startButton">开始</button>
     <button id="gliderButton">滑翔机</button>
     <button id="spaceshipButton">宇宙飞船</button>
-    <button id="gospersGliderGunButton">高帕斯滑翔机枪</button>
     <script>
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
@@ -133,30 +132,6 @@
             for (let y = 0; y < 4; y++) {
                 for (let x = 0; x < 5; x++) {
                     grid[startY + y][startX + x] = spaceship[y][x];
-                }
-            }
-            drawGrid();
-        });
-
-        const gospersGliderGunButton = document.getElementById('gospersGliderGunButton');
-        gospersGliderGunButton.addEventListener('click', () => {
-            const gospersGliderGun = [
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
-                [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-            ];
-            const startX = Math.floor(width / 2) - 18;
-            const startY = Math.floor(height / 2) - 5;
-            for (let y = 0; y < 11; y++) {
-                for (let x = 0; x < 36; x++) {
-                    grid[startY + y][startX + x] = gospersGliderGun[y][x];
                 }
             }
             drawGrid();
